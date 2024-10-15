@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 3f;            
-    public Rigidbody2D rb;                  
+    public Rigidbody rb;                  
 
-    private Vector2 movement;
+    private Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +19,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");    
+        float moveZ = Input.GetAxisRaw("Vertical");    
 
         
-        movement = new Vector2(moveX, moveY).normalized;
+        movement = new Vector3(moveX, 0 , moveZ).normalized;
     }
 
     void FixedUpdate()
